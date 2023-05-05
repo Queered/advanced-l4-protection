@@ -38,7 +38,7 @@ func main() {
 
     packetSource := gopacket.NewPacketSource(handle, handle.LinkType())
     for packet := range packetSource.Packets() {
-        // Get the IP layer from the packet
+        // get the ip layer from the packet
         ipLayer := packet.Layer(layers.LayerTypeIPv4)
         if ipLayer == nil {
             continue
